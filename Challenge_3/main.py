@@ -1,7 +1,7 @@
 class crypter:
 
     def __init__(self):
-        num = int(input('Ingrese el valor a encriptar: '))
+        num = input('Ingrese el valor a encriptar: ')
         print(self.cryp(num))
 
     def cryp(self, num):
@@ -13,7 +13,7 @@ class crypter:
 
     def DigitsSeparator(self, num):
         digits = []
-        for d in str(num):
+        for d in num:
             digits.append(int(d))
         return digits
     
