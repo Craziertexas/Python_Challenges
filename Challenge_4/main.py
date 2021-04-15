@@ -23,15 +23,21 @@ class decryption:
         return newdigits
 
     def ModInverse(self, num, mod):
-        for x in range(1, mod):
-            if (((num % mod) * ( x % mod)) % mod == 1):
-                return x
-        return -1
+        ModValues = []
+        solution = -1
+        for x in range(0, 10):
+            ModValues.append( (x+7) % mod)
+
+        for x in range(0, 10):
+            if num == ModValues[x]:
+                solution = x
+        
+        return solution
     
     def DigitModInverse(self, digits):
         newdigits = []
         for d in digits:
-            newdigits.append(self.ModInverse(10, d))
+            newdigits.append(self.ModInverse(d, 10))
         return newdigits
 
 if __name__ == '__main__':
